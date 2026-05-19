@@ -21,7 +21,7 @@ const slides = [
     cta: "Find a Doctor",
     link: "/doctor",
     icon: Stethoscope,
-    image: "/images/slider/slider3-1.jpg",
+    image: "/images/slider/838c3fb4-782b-4880-9266-33ca40842c90.jpeg",
     gradient: "from-zinc-900/60 via-zinc-900/40 to-zinc-900/60"
   },
   {
@@ -31,7 +31,7 @@ const slides = [
     cta: "Book a Test",
     link: "/contact",
     icon: Calendar,
-    image: "/images/slider/heart_bg.jpg",
+    image: "/images/slider/7c46a1f9-d16b-4d65-a0e0-e1bc7c264ebb.jpeg",
     gradient: "from-zinc-900/60 via-zinc-900/40 to-zinc-900/60"
   },
   {
@@ -41,7 +41,7 @@ const slides = [
     cta: "View Packages",
     link: "/packages",
     icon: Activity,
-    image: "/images/slider/dna_background.png",
+    image: "/images/slider/a276f120-a572-4b9a-98cf-810d4d30017f.jpeg",
     gradient: "from-zinc-900/60 via-zinc-900/40 to-zinc-900/60"
   }
 ];
@@ -75,10 +75,10 @@ export default function HomeSlider() {
                 <firstSlide.icon size={14} />
                 <span className="uppercase tracking-widest">{firstSlide.title}</span>
               </div>
-              <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl mb-6 leading-[1.1] drop-shadow-md">
+              <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl mb-6 leading-[1.1]">
                 {firstSlide.highlight}
               </h1>
-              <p className="text-lg leading-8 text-zinc-100 mb-10 font-medium drop-shadow-sm">
+              <p className="text-lg leading-8 text-zinc-100 mb-10 font-medium">
                 {firstSlide.description}
               </p>
             </div>
@@ -132,18 +132,18 @@ export default function HomeSlider() {
                     <span className="uppercase tracking-widest">{slide.title}</span>
                   </div>
                   
-                  <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl mb-6 leading-[1.1] drop-shadow-md">
+                  <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl mb-6 leading-[1.1]">
                     {slide.highlight}
                   </h1>
                   
-                  <p className="text-lg leading-8 text-zinc-100 mb-10 font-medium drop-shadow-sm">
+                  <p className="text-lg leading-8 text-zinc-100 mb-10 font-medium">
                     {slide.description}
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
                       href={slide.link}
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#33c2df] px-8 py-4 text-sm font-black text-white shadow-xl shadow-[#33c2df]/20 hover:brightness-110 transition-all active:scale-95"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#33c2df] px-8 py-4 text-sm font-black text-white hover:brightness-110 transition-all active:scale-95"
                     >
                       <slide.icon size={18} />
                       {slide.cta}
