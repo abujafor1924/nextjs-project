@@ -40,14 +40,14 @@ async function fetchAllDoctors(initialUrl: string): Promise<ApiDoctor[]> {
   let url: string | null = initialUrl;
 
   while (url) {
-    const response = await fetch(url, {
+    const response: Response = await fetch(url, {
       headers: { accept: 'application/json' },
       next: { revalidate: 3600 },
     });
 
     if (!response.ok) break;
 
-    const data = await response.json();
+    const data: { results?: ApiDoctor[]; next?: string | null } = await response.json();
     doctors.push(...(data.results || []));
     url = data.next ?? null;
   }
