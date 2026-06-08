@@ -12,6 +12,7 @@ interface Doctor {
   doctor_fees: string;
   hospital_name: string;
   subcategory_name: string;
+  subcategory_id?: number;
 }
 
 interface DoctorListProps {
@@ -82,7 +83,7 @@ const DoctorList = ({ doctors, title = "Our Specialists", subtitle = "Top-rated 
                   </div>
 
                   <Link 
-                    href={`/booking?subcategory=${doctor.subcategory_name}&doctor_id=${doctor.id}`}
+                    href={`/booking?subcategory=${doctor.subcategory_id ?? doctor.subcategory_name}&doctor_id=${doctor.id}`}
                     className="w-full bg-[#33c2df] hover:brightness-110 text-white font-black text-xs uppercase tracking-widest py-4 rounded-2xl transition-all shadow-lg shadow-[#33c2df]/20 flex items-center justify-center"
                   >
                     Book Appointment
