@@ -86,8 +86,8 @@ export default function Footer() {
             © {new Date().getFullYear()} Bellevie Global Health Services. All rights reserved.
           </p>
           <div className="flex gap-8">
-            <Link href="#" className="text-xs font-bold text-zinc-400 hover:text-[#33c2df] uppercase tracking-widest">Privacy Policy</Link>
-            <Link href="#" className="text-xs font-bold text-zinc-400 hover:text-[#33c2df] uppercase tracking-widest">Terms of Service</Link>
+            <Link href="/terms" className="text-xs font-bold text-zinc-400 hover:text-[#33c2df] uppercase tracking-widest">Terms & Conditions</Link>
+            <Link href="/privacy" className="text-xs font-bold text-zinc-400 hover:text-[#33c2df] uppercase tracking-widest">Privacy Policy</Link>
           </div>
         </div>
       </div>

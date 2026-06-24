@@ -7,7 +7,7 @@ export default function ContactInfo() {
     {
       icon: <Phone className="text-[#33c2df]" size={24} />,
       title: "Phone",
-      details: ["+8801805-464400", "+8801805-464400"],
+      details: ["+8801805-464400", "+8801805-464391","+8801805-464392"],
       label: "Call us anytime"
     },
     {
