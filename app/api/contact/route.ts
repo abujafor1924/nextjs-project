@@ -3,8 +3,6 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
   try {
     const { name, email, subject, message } = await req.json();
@@ -12,6 +10,8 @@ export async function POST(req: Request) {
     if (!name || !email || !subject || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
+
+    const resend = new Resend("re_kZeYS67H_5nMB64SDbKNZbkFbxV8XqaYL");
 
     const data = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>', 
