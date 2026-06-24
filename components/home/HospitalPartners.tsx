@@ -11,7 +11,7 @@ const partners = [
   { name: "Ibn Sina diagnostics", location: "Dhaka", logo: "IBN SINA" },
   { name: "BIRDEM General Hospital", location: "Dhaka", logo: "BIRDEM" },
   { name: "Popular Medical", location: "Dhaka", logo: "POPULAR" },
-  { name: "Concord Hospital", location: "Dhaka", logo: "Concord " },
+  { name: "Aqidah Mental Health", location: "Dhaka", logo: "AQIDAH" },
 ];
 
 export default function HospitalPartners() {

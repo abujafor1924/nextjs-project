@@ -8,7 +8,7 @@ export default function Navbar() {
     <header className="flex flex-col">
       <Topbar />
       <Middlebar />
-      <Bottombar />
+      {/* <Bottombar /> */}
     </header>
   )
 }

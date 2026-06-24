@@ -38,9 +38,9 @@ const slides = [
     title: "Health Packages",
     highlight: "Always Responsive to your Healthcare Call", 
     description: "Your One Stop helthcare Solution. We are here to serve you with the best healthcare services.",
-    cta: "View Packages",
-    link: "/packages",
-    icon: Activity,
+    cta: "Find a Doctor",
+    link: "/doctor",
+    icon: Stethoscope,
     image: "/images/slider/a276f120-a572-4b9a-98cf-810d4d30017f.jpeg",
     gradient: "from-zinc-900/60 via-zinc-900/40 to-zinc-900/60"
   }

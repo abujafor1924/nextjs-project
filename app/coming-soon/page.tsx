@@ -19,12 +19,11 @@ export default function ComingSoon() {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-zinc-900 dark:text-white mb-6">
-          Coming <span className="text-[#33c2df]">Soon</span>
+          Emergency <span className="text-[#33c2df]">Contact</span>
         </h1>
         
         <p className="text-xl text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed mb-8 max-w-lg mx-auto">
-          We're working hard to bring you the best international medical tourism experience. 
-          This destination will be available for booking very shortly.
+          For urgent assistance or medical emergencies, please contact our 24/7 hotline immediately. Our dedicated team is ready to provide you with the support and guidance you need.
         </p>
 
         {/* Contact Info for Foreign Treatments */}

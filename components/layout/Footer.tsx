@@ -32,8 +32,8 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 { name: "Find a Doctor", href: "/doctor" },
-                { name: "Book a Test", href: "/diagnostics" },
-                { name: "Medical Packages", href: "/packages" },
+                { name: "Book a Test", href: "/contact" },
+                // { name: "Medical Packages", href: "/packages" },
                 { name: "About Us", href: "/about" },
                 { name: "Contact", href: "/contact" }
               ].map((item) => (

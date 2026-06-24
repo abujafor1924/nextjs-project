@@ -91,11 +91,11 @@ export default function RegisterPage() {
           </p>
           <div className="grid grid-cols-2 gap-8">
             <div>
-              <div className="text-3xl font-black mb-1">150+</div>
+              <div className="text-3xl font-black mb-1">120+</div>
               <div className="text-xs font-black uppercase tracking-widest opacity-60">Verified Doctors</div>
             </div>
             <div>
-              <div className="text-3xl font-black mb-1">50k+</div>
+              <div className="text-3xl font-black mb-1">100k+</div>
               <div className="text-xs font-black uppercase tracking-widest opacity-60">Happy Patients</div>
             </div>
           </div>

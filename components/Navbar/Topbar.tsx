@@ -1,6 +1,6 @@
 import React from 'react'
 import { Phone, Mail } from 'lucide-react'
-import { FacebookIcon, TwitterIcon, InstagramIcon } from '../icons/BrandIcons'
+import { FacebookIcon, YouTubeIcon, InstagramIcon } from '../icons/BrandIcons'
 
 export default function Topbar() {
   return (
@@ -18,9 +18,9 @@ export default function Topbar() {
         </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-3.5  pr-4">
-            <a href="#" className="hover:text-zinc-900 dark:hover:text-white transition-colors"><FacebookIcon size={14} /></a>
-            <a href="#" className="hover:text-zinc-900 dark:hover:text-white transition-colors"><TwitterIcon size={14} /></a>
-            <a href="#" className="hover:text-zinc-900 dark:hover:text-white transition-colors"><InstagramIcon size={14} /></a>
+            <a href="https://www.facebook.com/share/18x4Uo8Uui/" className="hover:text-zinc-900 dark:hover:text-white transition-colors"><FacebookIcon size={14} /></a>
+            <a href="https://youtube.com/@bellevieglobalhealthservices?si=_JARGlhg-W-q5xuG" className="hover:text-zinc-900 dark:hover:text-white transition-colors"><YouTubeIcon size={14} /></a>
+            <a href="https://www.instagram.com/bellevieglobalhealth?igsh=MWc0NGp6dXRwbWtkYQ==" className="hover:text-zinc-900 dark:hover:text-white transition-colors"><InstagramIcon size={14} /></a>
           </div>
           {/* <div className="text-[11px] font-bold uppercase tracking-widest hover:text-zinc-900 dark:hover:text-white cursor-pointer transition-colors">
             Contact Us

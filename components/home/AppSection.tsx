@@ -119,13 +119,17 @@ export default function AppSection() {
                   <div className="text-lg font-black leading-none">iPhone</div>
                 </div>
               </button>
-              <button className="flex items-center gap-4 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border-2 border-zinc-100 dark:border-zinc-800 px-8 py-5 rounded-[2rem] hover:scale-105 transition-all active:scale-95 shadow-lg">
+              <a href="https://play.google.com/store/apps/details?id=com.bellevie.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                <button className="flex items-center gap-4 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border-2 border-zinc-100 dark:border-zinc-800 px-8 py-5 rounded-[2rem] hover:scale-105 transition-all active:scale-95 shadow-lg">
                 <Download size={24} strokeWidth={3} />
                 <div className="text-left">
                   <div className="text-[10px] font-black uppercase tracking-[0.1em] opacity-60 leading-none mb-1">Download for</div>
                   <div className="text-lg font-black leading-none">Android</div>
                 </div>
               </button>
+
+              </a>
+              
             </div>
           </div>
 

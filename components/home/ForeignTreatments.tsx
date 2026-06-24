@@ -121,7 +121,7 @@ export default function ForeignTreatments() {
             href="/coming-soon"
             className="inline-flex items-center gap-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 px-10 py-5 rounded-2xl text-base font-black uppercase tracking-widest hover:bg-[#33c2df] hover:text-white transition-all shadow-xl"
           >
-            View All 25+ Countries
+            View All 4+ Countries
             <Globe size={20} strokeWidth={2.5} />
           </Link>
         </div>

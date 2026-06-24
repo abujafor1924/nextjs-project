@@ -1,66 +1,96 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Search, Calendar, FileText, Activity } from 'lucide-react'
+"use client";
 
-export default function Middlebar() {
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
+import { Menu, X, ChevronDown, User, LogOut } from 'lucide-react';
+
+const navLinks = [
+  { name: 'Doctors', href: '/doctor', hasDropdown: false },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
+];
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  // Check login status on mount
+  React.useEffect(() => {
+    const token = localStorage.getItem('auth_token');
+    setIsLoggedIn(!!token);
+  }, [pathname]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('auth_token');
+    setIsLoggedIn(false);
+    router.push('/');
+  };
+
   return (
-    <div className="w-full bg-white dark:bg-black py-4">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative h-11 w-36">
+    <nav className="w-full bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between">
+          
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0">
+            <div className="relative h-12 w-36">
               <Image
                 src="/imageslogo/Gemini_Generated_Image_mv8pwamv8pwamv8pw.png"
                 alt="Bellevie Healthcare"
                 fill
-                sizes="(max-width: 768px) 144px, 144px"
-                className="object-contain transition-transform duration-500 group-hover:scale-105"
+                className="object-contain"
                 priority
               />
             </div>
           </Link>
-        </div>
 
-        {/* Search Bar - Healthcare Focused */}
-        {/* <div className="hidden flex-1 items-center justify-center px-10 md:flex">
-          <div className="w-full max-w-md relative group">
-            <div className="absolute inset-0 bg-[#33c2df]/5 rounded-xl group-focus-within:bg-white group-focus-within:ring-2 group-focus-within:ring-[#33c2df]/10 transition-all dark:bg-zinc-900 dark:group-focus-within:bg-zinc-800"></div>
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-[#33c2df] transition-colors" size={16} strokeWidth={2.5} />
-            <input
-              type="text"
-              placeholder="Search Doctors, Tests..."
-              className="relative w-full rounded-xl bg-transparent py-2.5 pl-10 pr-4 text-sm font-medium text-zinc-900 outline-hidden dark:text-white placeholder:text-zinc-400"
-            />
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-[12px] font-black uppercase tracking-widest transition-colors ${
+                  pathname === link.href ? 'text-[#33c2df]' : 'text-zinc-600 hover:text-[#33c2df]'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
-        </div> */}
 
-        {/* Healthcare Actions */}
-        <div className="flex items-center gap-6">
-          <div className="hidden sm:flex items-center gap-6">
-            <button className="flex flex-col items-center gap-1 text-zinc-600 hover:text-[#33c2df] dark:text-zinc-400 dark:hover:text-[#33c2df] transition-all group">
-              <Activity size={20} strokeWidth={2} className="group-hover:-translate-y-0.5 transition-transform" />
-              <span className="text-[9px] font-bold uppercase tracking-wider">Reports</span>
-            </button>
-            <button className="flex flex-col items-center gap-1 text-zinc-600 hover:text-[#33c2df] dark:text-zinc-400 dark:hover:text-[#33c2df] transition-all group">
-              <FileText size={20} strokeWidth={2} className="group-hover:-translate-y-0.5 transition-transform" />
-              <span className="text-[9px] font-bold uppercase tracking-wider">Records</span>
-            </button>
-            <button className="relative flex flex-col items-center gap-1 text-zinc-600 hover:text-[#33c2df] dark:text-zinc-400 dark:hover:text-[#33c2df] transition-all group">
-              <Calendar size={20} strokeWidth={2} className="group-hover:-translate-y-0.5 transition-transform" />
-              <span className="text-[9px] font-bold uppercase tracking-wider">Bookings</span>
-              <span className="absolute -right-1.5 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#33c2df] text-[9px] font-black text-white ring-1 ring-white dark:ring-black">
-                2
-              </span>
-            </button>
+          {/* Auth Actions */}
+          <div className="hidden md:flex items-center gap-4">
+            {!isLoggedIn ? (
+              <>
+                <Link href="/login" className="text-[12px] font-black uppercase tracking-widest text-zinc-600 hover:text-[#33c2df]">Login</Link>
+                <Link href="/register" className="bg-[#33c2df] text-white px-6 py-2.5 rounded-xl text-[12px] font-black uppercase tracking-widest hover:brightness-110">Join Now</Link>
+              </>
+            ) : (
+              <div className="flex items-center gap-4">
+                <Link href="/profile" className="flex items-center gap-2 text-zinc-900 dark:text-white font-bold text-xs uppercase tracking-widest hover:text-[#33c2df]">
+                  <User size={16} /> Profile
+                </Link>
+                <button 
+                  onClick={handleLogout}
+                  className="flex items-center gap-2 text-zinc-500 hover:text-red-500 transition-colors text-xs font-black uppercase tracking-widest"
+                >
+                  <LogOut size={16} /> Logout
+                </button>
+              </div>
+            )}
           </div>
-          
-          <button className="md:hidden text-zinc-900 dark:text-white">
-            <Search size={22} strokeWidth={2.5} />
+
+          {/* Mobile Toggle */}
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-zinc-900">
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
-    </div>
-  )
+    </nav>
+  );
 }
