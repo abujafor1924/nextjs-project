@@ -31,7 +31,7 @@ export default function ServicesSlider() {
   const [mounted, setMounted] = useState(false);
 
   const getImageUrl = (path: string) => {
-    if (!path || path === 'string' || path === '') {
+    if (!path || typeof path !== 'string' || path.toLowerCase() === 'string' || path.trim() === '') {
       return 'https://images.unsplash.com/photo-1504813184591-01592fd03cfd?q=80&w=2070&auto=format&fit=crop'; // Clean medical fallback
     }
     if (path.startsWith('http')) return path;
