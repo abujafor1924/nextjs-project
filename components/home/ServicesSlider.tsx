@@ -32,7 +32,9 @@ export default function ServicesSlider() {
 
   const getImageUrl = (path: string) => {
     if (!path || typeof path !== 'string' || path.toLowerCase() === 'string' || path.trim() === '') {
-      return "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop&q=80"; // Clean medical fallback
+      return 'https://images.unsplash.com/photo-1504813184591-01592fd03cfd?q=80&w=2070&auto=format&fit=crop&w=1200&q=80'; // Clean medical fallback
+      console.warn(`Invalid image path: "${path}". Using fallback image.`);
+      console.log(`Invalid image path: "${path}". Using fallback image.`);
     }
     if (path.startsWith('http')) return path;
     const cleanPath = path.startsWith('/') ? path : `/${path}`;
@@ -98,7 +100,7 @@ export default function ServicesSlider() {
             </div>
             <h2 className="text-4xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-6xl mb-2">
               Our Medical <span className="text-[#33c2df]">Departments</span>
-            </h2>upstream image response failed for https://images.unsplash.com/photo-1504813184591-01592fd03cfd?q=80&w=2070&auto=format&fit=crop
+            </h2>
             <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl text-lg font-medium">
               We provide a wide range of specialized medical services with world-class experts and advanced technology.
             </p>
@@ -151,6 +153,7 @@ export default function ServicesSlider() {
                       src={getImageUrl(category.banner)} 
                       alt={category.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -162,6 +165,7 @@ export default function ServicesSlider() {
                           src={getImageUrl(category.icon)} 
                           alt={category.name}
                           fill
+                          sizes="64px"
                           className="object-contain group-hover:brightness-0 group-hover:invert transition-all duration-500"
                         />
                       </div>

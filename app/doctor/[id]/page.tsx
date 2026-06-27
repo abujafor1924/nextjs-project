@@ -114,7 +114,7 @@ export default async function DoctorDetailsPage({
               <p className="text-xl font-bold text-[#33c2df] mb-6">{doctor.subcategory_name}</p>
               
               <p className="text-lg text-zinc-600 dark:text-zinc-400 font-medium mb-10 leading-relaxed max-w-2xl">
-                {doctor.designation} at <span className="text-zinc-900 dark:text-white font-black">{doctor.hospital.name}</span>. 
+                {doctor.designation} at <span className="text-zinc-900 dark:text-white font-black">{doctor.hospital?.name}</span>. 
                 Dedicated to providing exceptional healthcare with {doctor.years_of_experience} years of experience.
               </p>
 
@@ -140,13 +140,13 @@ export default async function DoctorDetailsPage({
                     <Hospital size={18} />
                     <span className="text-[10px] font-black uppercase tracking-widest">Hospital</span>
                   </div>
-                  <div className="text-sm font-black text-zinc-900 dark:text-white truncate">{doctor.hospital.name}</div>
+                  <div className="text-sm font-black text-zinc-900 dark:text-white truncate">{doctor.hospital?.name}</div>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-4">
                 <Link 
-                  href={`/booking?category=${doctor.hospital.id}&subcategory=${doctor.subcategory_name}&doctor_id=${doctor.id}`} 
+                  href={`/booking?category=${doctor.hospital?.id}&subcategory=${doctor.subcategory_name}&doctor_id=${doctor.id}`} 
                   className="bg-[#33c2df] hover:brightness-110 text-white font-black text-sm uppercase tracking-widest px-10 py-5 rounded-2xl transition-all shadow-xl shadow-[#33c2df]/20 flex items-center gap-2"
                 >
                   <Calendar size={20} />
@@ -173,7 +173,7 @@ export default async function DoctorDetailsPage({
                 About the Specialist
               </h2>
               <div className="text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed whitespace-pre-wrap">
-                {doctor.doctor_details || `${doctor.name} is a highly qualified ${doctor.subcategory_name?.toLowerCase()} specialist with extensive experience in providing patient-centered care. Currently serving at ${doctor.hospital.name}, they are committed to utilizing the latest medical advancements to ensure the best outcomes for their patients.`}
+                {doctor.doctor_details || `${doctor.name} is a highly qualified ${doctor.subcategory_name?.toLowerCase()} specialist with extensive experience in providing patient-centered care. Currently serving at ${doctor.hospital?.name}, they are committed to utilizing the latest medical advancements to ensure the best outcomes for their patients.`}
               </div>
             </section>
 
