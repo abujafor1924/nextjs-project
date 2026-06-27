@@ -173,7 +173,7 @@ export default async function DoctorDetailsPage({
                 About the Specialist
               </h2>
               <div className="text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed whitespace-pre-wrap">
-                {doctor.doctor_details || `${doctor.name} is a highly qualified ${doctor.subcategory_name.toLowerCase()} specialist with extensive experience in providing patient-centered care. Currently serving at ${doctor.hospital.name}, they are committed to utilizing the latest medical advancements to ensure the best outcomes for their patients.`}
+                {doctor.doctor_details || `${doctor.name} is a highly qualified ${doctor.subcategory_name?.toLowerCase()} specialist with extensive experience in providing patient-centered care. Currently serving at ${doctor.hospital.name}, they are committed to utilizing the latest medical advancements to ensure the best outcomes for their patients.`}
               </div>
             </section>
 

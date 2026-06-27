@@ -115,7 +115,7 @@ export default function ForeignTreatments() {
             </Link>
           ))}
         </div>
-
+{/* 
         <div className="mt-16 text-center">
           <Link 
             href="/coming-soon"
@@ -124,7 +124,7 @@ export default function ForeignTreatments() {
             View All 4+ Countries
             <Globe size={20} strokeWidth={2.5} />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

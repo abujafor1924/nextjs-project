@@ -32,7 +32,7 @@ export default function ServicesSlider() {
 
   const getImageUrl = (path: string) => {
     if (!path || typeof path !== 'string' || path.toLowerCase() === 'string' || path.trim() === '') {
-      return 'https://images.unsplash.com/photo-1504813184591-01592fd03cfd?q=80&w=2070&auto=format&fit=crop'; // Clean medical fallback
+      return "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop&q=80"; // Clean medical fallback
     }
     if (path.startsWith('http')) return path;
     const cleanPath = path.startsWith('/') ? path : `/${path}`;
@@ -98,7 +98,7 @@ export default function ServicesSlider() {
             </div>
             <h2 className="text-4xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-6xl mb-2">
               Our Medical <span className="text-[#33c2df]">Departments</span>
-            </h2>
+            </h2>upstream image response failed for https://images.unsplash.com/photo-1504813184591-01592fd03cfd?q=80&w=2070&auto=format&fit=crop
             <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl text-lg font-medium">
               We provide a wide range of specialized medical services with world-class experts and advanced technology.
             </p>
