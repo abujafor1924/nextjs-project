@@ -236,7 +236,7 @@ export default function ProfilePage() {
                          app.payment_status?.toLowerCase() === 'paid' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'
                        }`}>
                          <Banknote size={12} />
-                         {app.payment_status || 'Unpaid'}
+                         {app.status || 'Unpaid'}
                        </div>
 
                        <button className="w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-700 flex items-center justify-center text-zinc-400 hover:bg-[#33c2df] hover:text-white transition-all">
