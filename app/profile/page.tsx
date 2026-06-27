@@ -17,7 +17,8 @@ import {
   Bell,
   Stethoscope,
   Loader2,
-  Banknote
+  Banknote,
+  BadgeCheck
 } from 'lucide-react';
 
 interface UserProfile {
@@ -29,6 +30,8 @@ interface UserProfile {
 }
 
 interface Appointment {
+  status: string;
+  payment: { status: string } | null;
   id: number;
   doctor_name: string;
   doctor_image: string;
@@ -232,16 +235,37 @@ export default function ProfilePage() {
                           </div>
                        </div>
                        
+                       <div className="flex flex-col gap-1">
+                          
+                          <div className="flex items-center gap-2 text-zinc-500 text-xs font-bold">
+                            <BadgeCheck size={14} />
+                            <div
+                              className={`px-3 py-1 rounded-full text-xs font-bold capitalize ${
+                                app.status === "confirmed"
+                                  ? "bg-green-100 text-green-600"
+                                  : app.status === "pending"
+                                  ? "bg-yellow-100 text-yellow-600"
+                                  : app.status === "completed"
+                                  ? "bg-blue-100 text-blue-600"
+                                  : app.status === "cancelled"
+                                  ? "bg-red-100 text-red-600"
+                                  : "bg-gray-100 text-gray-600"
+                              }`}
+                            >
+                              {app.status}
+                            </div>
+                          </div>
+                       </div>
                        <div className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-2 ${
-                         app.payment_status?.toLowerCase() === 'paid' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'
+                         app.payment?.status?.toLowerCase() === 'paid' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'
                        }`}>
                          <Banknote size={12} />
-                         {app.payment_status?.toLowerCase() === 'paid' ? 'Paid' : 'Pending'}
+                         {app.payment?.status?.toLowerCase() === 'paid' ? 'Paid' : 'Pending'}
                        </div>
 
-                       <button className="w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-700 flex items-center justify-center text-zinc-400 hover:bg-[#33c2df] hover:text-white transition-all">
+                       {/* <button className="w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-700 flex items-center justify-center text-zinc-400 hover:bg-[#33c2df] hover:text-white transition-all">
                           <ChevronRight size={18} />
-                       </button>
+                       </button> */}
                     </div>
                   </div>
                 ))}
