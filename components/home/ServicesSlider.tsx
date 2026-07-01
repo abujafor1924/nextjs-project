@@ -32,7 +32,7 @@ export default function ServicesSlider() {
 
   const getImageUrl = (path: string) => {
     if (!path || typeof path !== 'string' || path.toLowerCase() === 'string' || path.trim() === '') {
-      return 'https://images.unsplash.com/photo-1504813184591-01592fd03cfd?q=80&w=2070&auto=format&fit=crop&w=1200&q=80'; // Clean medical fallback
+      return ''; // Clean medical fallback
       console.warn(`Invalid image path: "${path}". Using fallback image.`);
       console.log(`Invalid image path: "${path}". Using fallback image.`);
     }
@@ -99,7 +99,7 @@ export default function ServicesSlider() {
               <span>Our Specialities</span>
             </div>
             <h2 className="text-4xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-6xl mb-2">
-              Our Medical <span className="text-[#33c2df]">Departments</span>
+              Medical Departments<span className="text-[#33c2df]">Deal With</span>
             </h2>
             <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl text-lg font-medium">
               We provide a wide range of specialized medical services with world-class experts and advanced technology.

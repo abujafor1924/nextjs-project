@@ -10,7 +10,6 @@ import {
   MapPin, 
   Calendar, 
   Clock, 
-  ChevronRight, 
   LogOut,
   ShieldCheck,
   Settings,
@@ -49,6 +48,12 @@ export default function ProfilePage() {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [loading, setLoading] = useState(true);
 
+
+  const handleSignOut = () => {
+    localStorage.removeItem('auth_token');
+    router.push('/login');
+  };
+  
   useEffect(() => {
     const token = localStorage.getItem('auth_token');
     if (!token) {
@@ -89,10 +94,7 @@ export default function ProfilePage() {
     fetchData();
   }, [router]);
 
-  const handleSignOut = () => {
-    localStorage.removeItem('auth_token');
-    router.push('/login');
-  };
+  
 
   if (loading) {
     return (

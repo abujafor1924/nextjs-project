@@ -54,7 +54,7 @@ export default function ForeignTreatments() {
             <span>Global Medical Tourism</span>
           </div>
           <h2 className="text-4xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-6xl mb-6">
-            World-Class Care <span className="text-[#33c2df]">Beyond Borders</span>
+            World-Class Health Care <span className="text-[#33c2df]">Beyond Borders</span>
           </h2>
           <p className="max-w-2xl mx-auto text-xl text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed">
             We connect you with the most prestigious international hospitals. 
