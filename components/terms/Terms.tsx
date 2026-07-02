@@ -14,7 +14,7 @@ const terms = [
     icon: FileText,
     title: "Service Role",
     description:
-      "BelleVie provides healthcare assistance including doctor appointments, hospital coordination, and medical support services. We do not provide direct medical treatment.",
+      "Bellevie provides healthcare assistance including doctor appointments, hospital coordination, and medical support services. We do not provide direct medical treatment.",
   },
   {
     icon: ShieldCheck,
@@ -26,7 +26,7 @@ const terms = [
     icon: AlertTriangle,
     title: "Medical Disclaimer",
     description:
-      "Treatment decisions and outcomes depend on doctors and hospitals. BelleVie does not guarantee specific medical results.",
+      "Treatment decisions and outcomes depend on doctors and hospitals. Bellevie does not guarantee specific medical results.",
   },
   {
     icon: CreditCard,
@@ -56,7 +56,7 @@ const terms = [
     icon: AlertTriangle,
     title: "Liability",
     description:
-      "BelleVie is not liable for medical negligence, treatment outcomes, delays, or third-party service issues.",
+      "Bellevie is not liable for medical negligence, treatment outcomes, delays, or third-party service issues.",
   },
   {
     icon: RefreshCcw,
@@ -74,7 +74,7 @@ export default function Terms() {
         {/* Header */}
         <div className="mb-16 text-center">
           <span className="rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
-            BelleVie Global Health Services
+            Bellevie Global Health Services
           </span>
 
           <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white md:text-5xl">
@@ -116,7 +116,7 @@ export default function Terms() {
         {/* Bottom Notice */}
         <div className="mt-12 rounded-2xl border border-cyan-200 bg-cyan-50 p-6 dark:border-cyan-900 dark:bg-cyan-950/30">
           <p className="text-center text-sm text-zinc-700 dark:text-zinc-300">
-            By using BelleVie Global Health Services, you acknowledge that you
+            By using Bellevie Global Health Services, you acknowledge that you
             have read, understood, and agreed to these Terms & Conditions.
           </p>
         </div>

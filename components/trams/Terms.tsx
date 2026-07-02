@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 
 // This metadata helps search engines index your Privacy Policy correctly
 export const metadata: Metadata = {
-  title: 'Privacy Policy | BelleVie Health Care Services',
-  description: 'Learn how BelleVie Health Care Services collects, uses, and protects your personal and medical data.',
+  title: 'Privacy Policy | Bellevie Health Care Services',
+  description: 'Learn how Bellevie Health Care Services collects, uses, and protects your personal and medical data.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
             <h3 className="text-xl font-bold text-[#33c2df] mb-4">12. Contact Us</h3>
             <p className="text-sm text-zinc-700 leading-relaxed">
               For any privacy-related questions, reach out to us:<br/>
-              <strong>BelleVie Health Care Services</strong><br/>
+              <strong>Bellevie Health Care Services</strong><br/>
               Email: <a href="mailto:info@belleviehealth.com" className="text-[#33c2df] underline">info@belleviehealth.com</a><br/>
               Phone: +8801805464400<br/>
               Address: Dhaka, Bangladesh

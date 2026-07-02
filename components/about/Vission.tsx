@@ -17,10 +17,10 @@ const Vission = () => {
              Our vision is to become a globally trusted healthcare support and medical facilitation platform that redefines affordable healthcare accessibility across Asia and beyond. 
             </p>
             <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-             BelleVie envisions a future where every individual, regardless of economic background, can receive world-class medical care, modern treatment solutions, and holistic healthcare support with dignity and confidence.
+             Bellevie envisions a future where every individual, regardless of economic background, can receive world-class medical care, modern treatment solutions, and holistic healthcare support with dignity and confidence.
             </p>
             <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-             By combining Bangladeshi local hospitals with international medical expertise, Traditional Chinese Medicine, digital healthcare innovation, and strategic healthcare partnerships, BelleVie aims to create a sustainable healthcare ecosystem that improves lives, strengthens communities, and promotes healthier futures for generations to come.
+             By combining Bangladeshi local hospitals with international medical expertise, Traditional Chinese Medicine, digital healthcare innovation, and strategic healthcare partnerships, Bellevie aims to create a sustainable healthcare ecosystem that improves lives, strengthens communities, and promotes healthier futures for generations to come.
             </p>
           </div>
         </div>

@@ -42,11 +42,11 @@ export default function AboutHero() {
     <div className="mt-10 rounded-2xl bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md shadow-xl border border-zinc-200 dark:border-zinc-800 p-8 sm:p-10 text-left">
       
       <p className="text-zinc-700 dark:text-zinc-300 leading-8 text-base sm:text-lg">
-        BelleVie Global Health Services is a healthcare facilitation and support platform dedicated to making quality medical treatment more accessible, affordable, and patient-friendly for people from all economic backgrounds.
+        Bellevie Global Health Services is a healthcare facilitation and support platform dedicated to making quality medical treatment more accessible, affordable, and patient-friendly for people from all economic backgrounds.
       </p>
 
       <p className="mt-5 text-zinc-700 dark:text-zinc-300 leading-8 text-base sm:text-lg">
-        With a strong international healthcare network, BelleVie is connected with leading hospitals in India, Thailand, and China to ensure patients receive advanced and effective medical care with proper guidance and support.
+        With a strong international healthcare network, Bellevie is connected with leading hospitals in India, Thailand, and China to ensure patients receive advanced and effective medical care with proper guidance and support.
       </p>
 
       <p className="mt-5 text-zinc-700 dark:text-zinc-300 leading-8 text-base sm:text-lg">
@@ -54,11 +54,11 @@ export default function AboutHero() {
       </p>
 
       <p className="mt-5 text-zinc-700 dark:text-zinc-300 leading-8 text-base sm:text-lg">
-        Through digital healthcare support, hospital partnerships, membership programs, and financial collaborations, BelleVie simplifies the healthcare journey for patients in Bangladesh.
+        Through digital healthcare support, hospital partnerships, membership programs, and financial collaborations, Bellevie simplifies the healthcare journey for patients in Bangladesh.
       </p>
 
       <p className="mt-5 text-zinc-700 dark:text-zinc-300 leading-8 text-base sm:text-lg font-medium">
-        From consultation to international treatment coordination, BelleVie builds a trusted ecosystem where technology, compassion, and affordability work together.
+        From consultation to international treatment coordination, Bellevie builds a trusted ecosystem where technology, compassion, and affordability work together.
       </p>
     </div>
   </div>

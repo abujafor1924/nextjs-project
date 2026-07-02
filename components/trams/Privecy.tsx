@@ -7,8 +7,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | BelleVie Health Care Services',
-  description: 'Learn how BelleVie Health Care Services protects your personal and medical data.',
+  title: 'Privacy Policy | Bellevie Health Care Services',
+  description: 'Learn how Bellevie Health Care Services protects your personal and medical data.',
 };
 
 const policySections = [
@@ -52,7 +52,7 @@ export default function PrivacyPolicyPage() {
         {/* Header */}
         <div className="mb-16 text-center">
           <span className="rounded-full bg-[#33c2df]/10 px-4 py-2 text-sm font-semibold text-[#33c2df]">
-            BelleVie Privacy Commitment
+            Bellevie Privacy Commitment
           </span>
           <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white md:text-5xl">
             Privacy Policy
