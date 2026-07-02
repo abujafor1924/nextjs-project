@@ -99,10 +99,11 @@ export default function ServicesSlider() {
               <span>Our Specialities</span>
             </div>
             <h2 className="text-4xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-6xl mb-2">
-              Medical Departments<span className="text-[#33c2df]"> Deal With</span>
+              Medical Departments<span className="text-[#33c2df]"> We Deal With</span>
             </h2>
+
             <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl text-lg font-medium">
-              We provide a wide range of specialized medical services with world-class experts and advanced technology.
+              Explore our specialized medical departments, where experienced healthcare professionals provide comprehensive diagnosis, treatment, and compassionate care tailored to your health needs.
             </p>
           </div>
           

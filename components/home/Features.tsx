@@ -37,7 +37,7 @@ export default function Features() {
             <span>Core Advantages</span>
           </div>
           <h2 className="text-4xl font-black tracking-tighter text-zinc-900 dark:text-white sm:text-6xl mb-6">
-            Why Choose <span className="text-[#33c2df]">Bellevie Care</span>
+            Why Choose <span className="text-[#33c2df]">Bellevie Health Care</span>
           </h2>
           <p className="text-xl leading-relaxed text-zinc-600 dark:text-zinc-400 font-medium">
             We combine clinical excellence with the latest technology to provide 
