@@ -8,14 +8,14 @@ import Link from 'next/link';
 const stats = [
   {
     label: "Expert Doctors",
-    value: "30+",
+    value: "100+",
     icon: Stethoscope,
     color: "text-blue-500",
     bg: "bg-blue-50 dark:bg-blue-900/10"
   },
   {
     label: "Partner Hospitals",
-    value: "5+",
+    value: "500+",
     icon: Building2,
     color: "text-[#33c2df]",
     bg: "bg-[#33c2df]/10"
