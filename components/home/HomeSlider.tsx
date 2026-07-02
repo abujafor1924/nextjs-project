@@ -27,7 +27,7 @@ const slides = [
   {
     title: "Advanced Diagnostics",
     highlight: "Right Treatment Right Time.",
-    description: "Belle Vie covers every aspects of your medical needs and ensures healthy living.",
+    description: "BelleVie covers every aspects of your medical needs and ensures healthy living.",
     cta: "Book a Test",
     link: "/contact",
     icon: Calendar,
