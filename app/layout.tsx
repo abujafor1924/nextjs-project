@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bellevie | Modern Web Experiences",
+  title: "Bellevie Global Healthcare Services",
   description: "Creating beautiful and functional web experiences for modern businesses.",
 };
 
