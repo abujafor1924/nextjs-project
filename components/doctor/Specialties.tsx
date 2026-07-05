@@ -50,7 +50,7 @@ export default function Specialties() {
                 {spec.name}
               </h3>
               <div className="flex items-center gap-1 text-[#33c2df] text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
-                View Doctors
+                View Details
                 <ChevronRight size={14} />
               </div>
             </div>
