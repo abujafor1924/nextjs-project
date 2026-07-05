@@ -115,7 +115,7 @@ export default async function CategoryServicesPage({
                   href={`/doctor?category=${categoryId}&subcategory=${sub.id}`}
                   className="mt-auto inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-[#33c2df] group-hover:gap-4 transition-all duration-300"
                 >
-                  View Doctors
+                  View Details
                   <ChevronRight size={16} strokeWidth={3} />
                 </Link>
               </div>
