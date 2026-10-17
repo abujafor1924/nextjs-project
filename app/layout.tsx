@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bellevie Global Healthcare Services",
   description: "Creating beautiful and functional web experiences for modern businesses.",
+  verification: {
+    google: "2iuJvQGxS77oPptZNiyPOZNXbb3hL-8ee_gj0vlvmaM",
+  },
 };
 
 export default function RootLayout({
