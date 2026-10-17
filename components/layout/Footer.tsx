@@ -50,10 +50,16 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-black uppercase tracking-[0.2em] text-zinc-900 dark:text-white mb-8">Departments</h3>
             <ul className="space-y-4">
-              {["Cardiology", "Neurology", "Pediatrics", "Orthopedics", "Ophthalmology"].map((item) => (
-                <li key={item}>
-                  <Link href="https://belleviebd.netlify.app/services/1" className="text-base text-zinc-500 dark:text-zinc-400 font-medium hover:text-[#33c2df] transition-colors">
-                    {item}
+              {[
+                { name: "Cardiology", href: "/doctor?category=1&subcategory=11" },
+                { name: "Neurology", href: "/doctor?category=1&subcategory=4" },
+                { name: "Pediatrics", href: "/doctor?category=20&subcategory=49" },
+                { name: "Orthopedics", href: "/doctor?category=1&subcategory=32" },
+                { name: "Ophthalmology", href: "/doctor?category=10&subcategory=35" },
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-base text-zinc-500 dark:text-zinc-400 font-medium hover:text-[#33c2df] transition-colors">
+                    {item.name}
                   </Link>
                 </li>
               ))}

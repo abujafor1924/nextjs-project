@@ -58,7 +58,7 @@ function BookingContent() {
           id: data.id,
           name: data.name,
           image: data.image,
-          subcategory_name: data.subcategory_name,
+          subcategory_name: data.subcategory_name || data.subcategories?.[0]?.name || "Medical Specialist",
           hospital_name: data.hospital?.name || "Premium Hospital",
           fees: data.doctor_fees || "500"
         });

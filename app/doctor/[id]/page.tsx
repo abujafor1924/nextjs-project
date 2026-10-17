@@ -27,7 +27,12 @@ interface DoctorDetails {
     id: number;
     name: string;
   };
-  subcategory_name: string;
+  subcategories?: {
+    id: number;
+    name: string;
+    category: number;
+  }[];
+  subcategory_name?: string;
   doctor_details: string;
   doctor_sedule: string;
   contact_details: string;
@@ -111,7 +116,9 @@ export default async function DoctorDetailsPage({
                 {doctor.name}
               </h1>
               
-              <p className="text-xl font-bold text-[#33c2df] mb-6">{doctor.subcategory_name}</p>
+              <p className="text-xl font-bold text-[#33c2df] mb-6">
+                {doctor.subcategory_name || doctor.subcategories?.[0]?.name || "Specialist"}
+              </p>
               
               <p className="text-lg text-zinc-600 dark:text-zinc-400 font-medium mb-10 leading-relaxed max-w-2xl">
                 {doctor.designation} at <span className="text-zinc-900 dark:text-white font-black">{doctor.hospital?.name}</span>. 
@@ -146,7 +153,7 @@ export default async function DoctorDetailsPage({
 
               <div className="flex flex-wrap gap-4">
                 <Link 
-                  href={`/booking?category=${doctor.hospital?.id}&subcategory=${doctor.subcategory_name}&doctor_id=${doctor.id}`} 
+                  href={`/booking?category=${doctor.hospital?.id}&subcategory=${doctor.subcategory_name || doctor.subcategories?.[0]?.name || ""}&doctor_id=${doctor.id}`} 
                   className="bg-[#33c2df] hover:brightness-110 text-white font-black text-sm uppercase tracking-widest px-10 py-5 rounded-2xl transition-all shadow-xl shadow-[#33c2df]/20 flex items-center gap-2"
                 >
                   <Calendar size={20} />
@@ -173,7 +180,7 @@ export default async function DoctorDetailsPage({
                 About the Specialist
               </h2>
               <div className="text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed whitespace-pre-wrap">
-                {doctor.doctor_details || `${doctor.name} is a highly qualified ${doctor.subcategory_name?.toLowerCase()} specialist with extensive experience in providing patient-centered care. Currently serving at ${doctor.hospital?.name}, they are committed to utilizing the latest medical advancements to ensure the best outcomes for their patients.`}
+                {doctor.doctor_details || `${doctor.name} is a highly qualified ${(doctor.subcategory_name || doctor.subcategories?.[0]?.name || "specialist").toLowerCase()} specialist with extensive experience in providing patient-centered care. Currently serving at ${doctor.hospital?.name}, they are committed to utilizing the latest medical advancements to ensure the best outcomes for their patients.`}
               </div>
             </section>
 

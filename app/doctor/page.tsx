@@ -42,7 +42,7 @@ async function fetchAllDoctors(initialUrl: string): Promise<ApiDoctor[]> {
   while (url) {
     const response: Response = await fetch(url, {
       headers: { accept: 'application/json' },
-      next: { revalidate: 3600 },
+      next: { revalidate: 60 },
     });
 
     if (!response.ok) break;
@@ -57,14 +57,25 @@ async function fetchAllDoctors(initialUrl: string): Promise<ApiDoctor[]> {
 
 function normalizeDoctor(
   doctor: ApiDoctor,
-  categoryId: number,
+  categoryId?: number,
   subcategoryId?: string,
 ): DoctorListItem | null {
   const subcategories = doctor.subcategories ?? [];
 
-  const matchedSubcategory = subcategoryId
-    ? subcategories.find((sub) => sub.id === Number(subcategoryId))
-    : subcategories.find((sub) => sub.category === categoryId);
+  let matchedSubcategory: ApiSubcategory | undefined;
+
+  if (subcategoryId && categoryId) {
+    matchedSubcategory =
+      subcategories.find(
+        (sub) => sub.id === Number(subcategoryId) && sub.category === categoryId,
+      ) ?? subcategories.find((sub) => sub.id === Number(subcategoryId));
+  } else if (subcategoryId) {
+    matchedSubcategory = subcategories.find((sub) => sub.id === Number(subcategoryId));
+  } else if (categoryId) {
+    matchedSubcategory = subcategories.find((sub) => sub.category === categoryId);
+  } else {
+    matchedSubcategory = subcategories[0];
+  }
 
   if (!matchedSubcategory) return null;
 
@@ -82,16 +93,28 @@ function normalizeDoctor(
 }
 
 async function getDoctors(subcategory?: string, category?: string): Promise<DoctorListItem[]> {
-  const categoryId = category ? Number(category) : DOCTOR_APPOINTMENT_CATEGORY_ID;
+  const categoryId = category ? Number(category) : (subcategory ? undefined : DOCTOR_APPOINTMENT_CATEGORY_ID);
 
-  let url = `${API_BASE_URL}/popular-service/doctors/?page=1&subcategory__category=${categoryId}`;
-  if (subcategory) url += `&subcategory=${subcategory}`;
+  const params = new URLSearchParams({ page: '1' });
+  if (categoryId) {
+    params.set('subcategories__category', String(categoryId));
+  }
+  if (subcategory) {
+    params.set('subcategories', subcategory);
+  }
+
+  const url = `${API_BASE_URL}/popular-service/doctors/?${params.toString()}`;
 
   try {
     const doctors = await fetchAllDoctors(url);
+    const seen = new Set<number>();
     return doctors
       .map((doctor) => normalizeDoctor(doctor, categoryId, subcategory))
-      .filter((doctor): doctor is DoctorListItem => doctor !== null);
+      .filter((doctor): doctor is DoctorListItem => {
+        if (!doctor || seen.has(doctor.id)) return false;
+        seen.add(doctor.id);
+        return true;
+      });
   } catch (error) {
     console.error('Error fetching doctors:', error);
     return [];
@@ -106,15 +129,24 @@ export default async function DoctorPage({
   const { subcategory, category } = await searchParams;
   const doctors = await getDoctors(subcategory, category);
   const isFiltered = Boolean(subcategory || category);
+  const matchedSubcategoryName = subcategory && doctors.length > 0 ? doctors[0].subcategory_name : null;
 
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-950 pt-12">
       <DoctorList
         doctors={doctors}
-        title={isFiltered ? 'Filtered Specialists' : 'Doctor Appointments'}
+        title={
+          matchedSubcategoryName
+            ? `${matchedSubcategoryName} Specialists`
+            : isFiltered
+            ? 'Filtered Specialists'
+            : 'Doctor Appointments'
+        }
         subtitle={
           isFiltered
-            ? 'Available specialists for your selected category'
+            ? matchedSubcategoryName
+              ? `Available ${matchedSubcategoryName.toLowerCase()} specialists for consultation`
+              : 'Available specialists for your selected category'
             : 'Book an appointment with our verified medical specialists'
         }
       />
